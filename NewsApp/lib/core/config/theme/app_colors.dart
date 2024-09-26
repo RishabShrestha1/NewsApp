@@ -23,4 +23,6 @@ class AppColors {
   static const warningDark = Color.fromARGB(255, 148, 98, 0);
   static const warningDarkmode = Color.fromARGB(255, 255, 215, 137);
   static const warningDefault = Color.fromARGB(255, 244, 183, 64);
+  static const white = Color.fromARGB(255, 255, 255, 255);
+  static const black = Color.fromARGB(255, 0, 0, 0);
 }

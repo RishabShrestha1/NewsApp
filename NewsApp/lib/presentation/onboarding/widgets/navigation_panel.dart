@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:newsapp_self/common/widgets/buttons/basic_app_elevated_button.dart';
 import 'package:newsapp_self/common/widgets/buttons/basic_app_text_button.dart';
 
@@ -87,6 +88,7 @@ class _NavigationPanelState extends State<NavigationPanel> {
   }
 
   void _getStarted() {
+    context.go('/choose_mode');
     log('Get Started Pressed!');
   }
 }
