@@ -2,12 +2,14 @@ import 'dart:developer';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:newsapp_self/core/config/theme/app_theme.dart';
 import 'package:newsapp_self/core/constants/routes.dart';
 import 'package:newsapp_self/core/constants/screen_dimensions.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:newsapp_self/presentation/choose_mode/bloc/theme_cubit.dart';
 import 'package:path_provider/path_provider.dart';
 
 Future<void> main() async {
@@ -34,11 +36,24 @@ class NewsApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: Size(deviceWidth, deviceHeight),
       builder: (context, child) {
-        return MaterialApp.router(
-          title: 'News App',
-          debugShowCheckedModeBanner: false,
-          theme: AppTheme.lightTheme,
-          routerConfig: approutes,
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => ThemeCubit(),
+            ),
+          ],
+          child: BlocBuilder<ThemeCubit, ThemeMode>(
+            builder: (context, mode) {
+              return MaterialApp.router(
+                title: 'News App',
+                debugShowCheckedModeBanner: false,
+                theme: AppTheme.lightTheme,
+                darkTheme: AppTheme.darktTheme,
+                themeMode: mode,
+                routerConfig: approutes,
+              );
+            },
+          ),
         );
       },
     );

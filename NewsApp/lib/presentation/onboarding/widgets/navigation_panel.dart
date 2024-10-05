@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:newsapp_self/common/widgets/buttons/basic_app_elevated_button.dart';
-import 'package:newsapp_self/common/widgets/buttons/basic_app_text_button.dart';
 
 class NavigationPanel extends StatefulWidget {
   final PageController controller;
@@ -50,9 +49,14 @@ class _NavigationPanelState extends State<NavigationPanel> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         currentpage > 0
-            ? BasicAppTextButton(
-                onPressed: _onPreviousPressed,
-                title: 'Back',
+            ? GestureDetector(
+                onTap: _onPreviousPressed,
+                child: Text(
+                  'Back',
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
+                ),
               )
             : const SizedBox.shrink(),
         SizedBox(
@@ -62,12 +66,12 @@ class _NavigationPanelState extends State<NavigationPanel> {
             ? BasicAppElevatedButton(
                 onPressed: _onNextPressed,
                 title: 'Next',
-                width: 85.w,
+                width: 90.w,
               )
             : BasicAppElevatedButton(
                 onPressed: _getStarted,
                 title: 'Get Started',
-                width: 142.w,
+                width: 150.w,
               ),
       ],
     );
@@ -88,7 +92,7 @@ class _NavigationPanelState extends State<NavigationPanel> {
   }
 
   void _getStarted() {
-    context.go('/choose_mode');
+    context.go('/signin_or_signup');
     log('Get Started Pressed!');
   }
 }

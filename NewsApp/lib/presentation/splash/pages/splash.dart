@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Future<void> redirect() async {
     await Future.delayed(const Duration(seconds: 2));
     if (context.mounted) {
-      context.go('/onboarding');
+      context.go('/choose_mode');
     }
   }
 }

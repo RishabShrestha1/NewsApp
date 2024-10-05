@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:newsapp_self/common/widgets/buttons/basic_app_elevated_button.dart';
 import 'package:newsapp_self/common/widgets/buttons/basic_app_icon_button.dart';
 import 'package:newsapp_self/core/config/assets/app_vectors.dart';
 import 'package:newsapp_self/core/config/assets/app_icons.dart';
 import 'package:newsapp_self/core/config/theme/app_colors.dart';
+import 'package:newsapp_self/presentation/choose_mode/bloc/theme_cubit.dart';
 
 class ChooseModePage extends StatelessWidget {
   const ChooseModePage({super.key});
@@ -35,7 +38,9 @@ class ChooseModePage extends StatelessWidget {
                 Column(
                   children: [
                     BasicAppIconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.read<ThemeCubit>().setTheme(ThemeMode.dark);
+                      },
                       icon: Icon(AppIcons().darkmode),
                       iconSize: 50.h,
                       backgroundColor: AppColors.darkmodeBackground,
@@ -57,7 +62,9 @@ class ChooseModePage extends StatelessWidget {
                 Column(
                   children: [
                     BasicAppIconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.read<ThemeCubit>().setTheme(ThemeMode.light);
+                      },
                       icon: Icon(AppIcons().lightmode),
                       iconSize: 50.h,
                       backgroundColor: AppColors.lightmodeBackground,
@@ -78,7 +85,9 @@ class ChooseModePage extends StatelessWidget {
               height: 100.h,
             ),
             BasicAppElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                context.go('/onboarding');
+              },
               title: 'Get Started',
               width: 150.w,
               height: 50.h,

@@ -13,16 +13,37 @@ class AppTheme {
     ),
     fontFamily: 'Poppins',
     textTheme: TextTheme(
-        titleMedium: TextStyle(
-          fontSize: fontSize30,
-          fontWeight: FontWeight.w600,
-          color: AppColors.grayscaleBodyText,
-        ),
-        bodyMedium: TextStyle(
-          fontSize: fontSize16,
-          fontWeight: FontWeight.w600,
-          color: AppColors.grayscaleBodyText,
-        )),
+      displayLarge: TextStyle(
+        fontSize: fontSize48,
+        fontWeight: FontWeight.w400,
+        color: AppColors.grayscaleTitleActive,
+      ),
+      displayMedium: TextStyle(
+        fontSize: fontSize32,
+        fontWeight: FontWeight.w400,
+        color: AppColors.grayscaleBodyText,
+      ),
+      displaySmall: TextStyle(
+        fontSize: fontSize24,
+        fontWeight: FontWeight.w400,
+        color: AppColors.grayscaleTitleActive,
+      ),
+      bodyLarge: TextStyle(
+        fontSize: fontSize20,
+        fontWeight: FontWeight.w400,
+        color: AppColors.grayscaleBodyText,
+      ),
+      bodyMedium: TextStyle(
+        fontSize: fontSize16,
+        fontWeight: FontWeight.w600,
+        color: AppColors.grayscaleBodyText,
+      ),
+      bodySmall: TextStyle(
+        fontSize: fontSize14,
+        fontWeight: FontWeight.w400,
+        color: AppColors.grayscaleBodyText,
+      ),
+    ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primaryDefault,
@@ -33,7 +54,7 @@ class AppTheme {
           fontWeight: FontWeight.w600,
         ),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(6.0),
+          borderRadius: BorderRadius.circular(6.0.r),
         ),
       ),
     ),
@@ -44,16 +65,37 @@ class AppTheme {
     scaffoldBackgroundColor: AppColors.darkmodeBackground,
     fontFamily: 'Poppins',
     textTheme: TextTheme(
-        titleMedium: TextStyle(
-          fontSize: fontSize30,
-          fontWeight: FontWeight.w600,
-          color: AppColors.darkmodeTitle,
-        ),
-        bodyMedium: TextStyle(
-          fontSize: fontSize16,
-          fontWeight: FontWeight.w600,
-          color: AppColors.darkmodeBody,
-        )),
+      displayLarge: TextStyle(
+        fontSize: fontSize48,
+        fontWeight: FontWeight.w400,
+        color: AppColors.darkmodeTitle,
+      ),
+      displayMedium: TextStyle(
+        fontSize: fontSize32,
+        fontWeight: FontWeight.w400,
+        color: AppColors.darkmodeTitle,
+      ),
+      displaySmall: TextStyle(
+        fontSize: fontSize24,
+        fontWeight: FontWeight.w400,
+        color: AppColors.darkmodeTitle,
+      ),
+      bodyLarge: TextStyle(
+        fontSize: fontSize20,
+        fontWeight: FontWeight.w400,
+        color: AppColors.darkmodeBody,
+      ),
+      bodyMedium: TextStyle(
+        fontSize: fontSize16,
+        fontWeight: FontWeight.w600,
+        color: AppColors.darkmodeBody,
+      ),
+      bodySmall: TextStyle(
+        fontSize: fontSize14,
+        fontWeight: FontWeight.w400,
+        color: AppColors.darkmodeBody,
+      ),
+    ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primaryDefault,
