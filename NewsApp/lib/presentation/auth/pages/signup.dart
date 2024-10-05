@@ -10,8 +10,8 @@ import 'package:newsapp_self/core/constants/screen_dimensions.dart';
 import 'package:newsapp_self/domain/validators/userdetails_textfield_validation.dart';
 import 'package:newsapp_self/presentation/auth/widgets/custom_title.dart';
 
-class SigninPage extends StatelessWidget {
-  const SigninPage({super.key});
+class SignupPage extends StatelessWidget {
+  const SignupPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +24,8 @@ class SigninPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const CustomTitleWidget(text: 'Hello'),
-                SizedBox(
-                  height: 10.h,
-                ),
                 const CustomTitleWidget(
-                  text: 'Again!',
+                  text: 'Hello',
                   color: AppColors.primaryDefault,
                 ),
                 SizedBox(
@@ -38,7 +34,7 @@ class SigninPage extends StatelessWidget {
                 SizedBox(
                   width: 230.w,
                   child: Text(
-                    'Welcome back you\'ve \nbeen missed!',
+                    'Signup to get Started',
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(),
                   ),
                 ),
@@ -150,15 +146,15 @@ class SigninPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Don\'t have an account ? ',
+                      'Already have an account ? ',
                       style: Theme.of(context).textTheme.bodySmall,
                     ),
                     GestureDetector(
                       onTap: () {
-                        context.go('/signup');
+                        context.go('/signin');
                       },
                       child: Text(
-                        'Sign up',
+                        'Login',
                         style: Theme.of(context)
                             .textTheme
                             .bodySmall

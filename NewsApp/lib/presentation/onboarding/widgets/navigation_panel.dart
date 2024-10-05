@@ -92,7 +92,7 @@ class _NavigationPanelState extends State<NavigationPanel> {
   }
 
   void _getStarted() {
-    context.go('/signin_or_signup');
+    context.go('/signin');
     log('Get Started Pressed!');
   }
 }
