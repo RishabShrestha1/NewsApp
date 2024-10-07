@@ -7,6 +7,7 @@ import 'package:newsapp_self/presentation/auth/pages/signup.dart';
 import 'package:newsapp_self/presentation/auth/pages/welcomepage.dart';
 import 'package:newsapp_self/presentation/choose_mode/pages/choose_mode.dart';
 import 'package:newsapp_self/presentation/onboarding/pages/onboarding.dart';
+import 'package:newsapp_self/presentation/root/pages/root.dart';
 import 'package:newsapp_self/presentation/splash/pages/splash.dart';
 
 final approutes = GoRouter(
@@ -64,5 +65,10 @@ final approutes = GoRouter(
       name: 'welcomepage',
       builder: (context, state) => const Welcomepage(),
     ),
+    GoRoute(
+      path: '/root',
+      name: 'root',
+      builder: (context, state) => const RootPage(),
+    )
   ],
 );

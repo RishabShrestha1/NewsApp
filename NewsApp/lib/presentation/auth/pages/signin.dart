@@ -7,10 +7,13 @@ import 'package:newsapp_self/common/widgets/buttons/basic_app_elevated_button.da
 import 'package:newsapp_self/core/config/assets/app_vectors.dart';
 import 'package:newsapp_self/core/config/theme/app_colors.dart';
 import 'package:newsapp_self/core/constants/screen_dimensions.dart';
+import 'package:newsapp_self/data/models/auth/signin_user_req.dart';
+import 'package:newsapp_self/domain/usecases/auth/signin.dart';
 import 'package:newsapp_self/presentation/auth/widgets/custom_title.dart';
 import 'package:newsapp_self/presentation/auth/widgets/email_textfield.dart';
 import 'package:newsapp_self/presentation/auth/widgets/facebook_auth.dart';
 import 'package:newsapp_self/presentation/auth/widgets/google_auth.dart';
+import 'package:newsapp_self/service_locator.dart';
 
 import '../widgets/password_textfield.dart';
 
@@ -45,7 +48,7 @@ class SigninPage extends StatelessWidget {
                 const SizedBox(height: 8),
                 _saveAndforgotpassword(context),
                 const SizedBox(height: 16),
-                _loginbutton(),
+                _loginbutton(context),
                 const SizedBox(height: 16),
                 _orcontinuewith(context),
                 const SizedBox(height: 16),
@@ -83,9 +86,25 @@ class SigninPage extends StatelessWidget {
     );
   }
 
-  Widget _loginbutton() {
+  Widget _loginbutton(BuildContext context) {
     return BasicAppElevatedButton(
-      onPressed: () {},
+      onPressed: () async {
+        var result = await sl<SigninUseCase>().call(
+          params: SigninUserReq(
+            email: emailcontroller.text.toString(),
+            password: passwordcontroller.text.toString(),
+          ),
+        );
+        result.fold((l) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(l.message),
+            ),
+          );
+        }, (r) {
+          context.go('/welcomepage');
+        });
+      },
       title: 'Login',
       width: deviceWidth - 48.w,
     );
