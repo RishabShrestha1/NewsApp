@@ -92,6 +92,13 @@ class ChooseModePage extends StatelessWidget {
               width: 150.w,
               height: 50.h,
             ),
+            SizedBox(
+              height: 10.h,
+            ),
+            Text(
+              'Current Mode: ${context.watch<ThemeCubit>().state.name.toUpperCase()}',
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(),
+            ),
             const Spacer(),
           ],
         ),

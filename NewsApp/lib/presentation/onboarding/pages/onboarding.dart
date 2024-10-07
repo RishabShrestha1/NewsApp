@@ -66,6 +66,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         ),
         bottomSheet: Container(
           padding: EdgeInsets.symmetric(horizontal: 24.sp, vertical: 40.sp),
+          color: Theme.of(context).scaffoldBackgroundColor,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [

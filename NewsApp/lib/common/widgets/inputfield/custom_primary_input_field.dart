@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:newsapp_self/core/constants/screen_dimensions.dart';
 
 class CustomInputField extends StatefulWidget {
   final String labelText;
@@ -33,8 +32,8 @@ class _CustomInputFieldState extends State<CustomInputField> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      // mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment:
+          CrossAxisAlignment.start, // Ensure content starts at the left
       children: [
         Row(
           children: [
@@ -49,38 +48,30 @@ class _CustomInputFieldState extends State<CustomInputField> {
           ],
         ),
         SizedBox(height: 4.h),
-        Container(
-          margin: EdgeInsetsDirectional.only(bottom: deviceHeight * 0.02),
-          child: TextFormField(
-            validator: widget.validator,
-            controller: widget.controller,
-            obscureText: widget.isObscure ? !isViewed : false,
-            readOnly: widget.readOnly!,
-            decoration: InputDecoration(
-              labelStyle: const TextStyle(color: Colors.black),
-              floatingLabelBehavior: FloatingLabelBehavior.always,
-              floatingLabelStyle: const TextStyle(
-                color: Colors.black,
-              ),
-              floatingLabelAlignment: FloatingLabelAlignment.start,
-              prefixIcon: Icon(
-                widget.prefixIcon,
-              ),
-              suffixIcon: widget.isObscure
-                  ? IconButton(
-                      onPressed: () {
-                        setState(() {
-                          isViewed = !isViewed;
-                        });
-                      },
-                      icon: isViewed
-                          ? const Icon(Iconsax.eye)
-                          : const Icon(Iconsax.eye_slash),
-                    )
-                  : null,
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
+        TextFormField(
+          validator: widget.validator,
+          controller: widget.controller,
+          obscureText: widget.isObscure ? !isViewed : false,
+          readOnly: widget.readOnly!,
+          textAlign: TextAlign.start,
+          style: Theme.of(context).textTheme.bodySmall,
+          decoration: InputDecoration(
+            prefixIcon:
+                widget.prefixIcon != null ? Icon(widget.prefixIcon) : null,
+            suffixIcon: widget.isObscure
+                ? IconButton(
+                    onPressed: () {
+                      setState(() {
+                        isViewed = !isViewed;
+                      });
+                    },
+                    icon: isViewed
+                        ? const Icon(Iconsax.eye)
+                        : const Icon(Iconsax.eye_slash),
+                  )
+                : null,
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
             ),
           ),
         ),

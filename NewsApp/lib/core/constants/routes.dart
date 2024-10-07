@@ -10,7 +10,7 @@ import 'package:newsapp_self/presentation/onboarding/pages/onboarding.dart';
 import 'package:newsapp_self/presentation/splash/pages/splash.dart';
 
 final approutes = GoRouter(
-  // initialLocation: '/splashscreen',
+  initialLocation: '/splashscreen',
   // initialLocation: '/onboarding',
   // initialLocation: '/choose_mode',
   // initialLocation: '/signin',
