@@ -3,12 +3,14 @@ import 'package:newsapp_self/common/widgets/inputfield/custom_primary_input_fiel
 import 'package:newsapp_self/domain/validators/userdetails_textfield_validation.dart';
 
 class CustomEmailField extends StatelessWidget {
-  const CustomEmailField({super.key});
+  final TextEditingController econtroller;
+  const CustomEmailField({super.key, required this.econtroller});
 
   @override
   Widget build(BuildContext context) {
     return CustomInputField(
       labelText: 'Email',
+      controller: econtroller,
       validator: (value) {
         if (value!.isEmpty) {
           return 'Email cannot be empty';

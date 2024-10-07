@@ -38,12 +38,12 @@ final approutes = GoRouter(
     GoRoute(
       path: '/signin',
       name: 'signin',
-      builder: (context, state) => const SigninPage(),
+      builder: (context, state) => SigninPage(),
     ),
     GoRoute(
       path: '/signup',
       name: 'signup',
-      builder: (context, state) => const SignupPage(),
+      builder: (context, state) => SignupPage(),
     ),
     GoRoute(
       path: '/forgotpassword',

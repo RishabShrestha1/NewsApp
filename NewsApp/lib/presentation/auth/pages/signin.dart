@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -13,7 +15,9 @@ import 'package:newsapp_self/presentation/auth/widgets/google_auth.dart';
 import '../widgets/password_textfield.dart';
 
 class SigninPage extends StatelessWidget {
-  const SigninPage({super.key});
+  SigninPage({super.key});
+  final TextEditingController emailcontroller = TextEditingController();
+  final TextEditingController passwordcontroller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -32,8 +36,12 @@ class SigninPage extends StatelessWidget {
                 const SizedBox(height: 5),
                 _descriptiontext(context),
                 const SizedBox(height: 48),
-                const CustomEmailField(),
-                const CustomPasswordField(),
+                CustomEmailField(
+                  econtroller: emailcontroller,
+                ),
+                CustomPasswordField(
+                  pcontroller: passwordcontroller,
+                ),
                 const SizedBox(height: 8),
                 _saveAndforgotpassword(context),
                 const SizedBox(height: 16),

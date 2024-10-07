@@ -3,12 +3,14 @@ import 'package:newsapp_self/common/widgets/inputfield/custom_primary_input_fiel
 import 'package:newsapp_self/core/config/assets/app_icons.dart';
 
 class CustomPasswordField extends StatelessWidget {
-  const CustomPasswordField({super.key});
+  final TextEditingController pcontroller;
+  const CustomPasswordField({super.key, required this.pcontroller});
 
   @override
   Widget build(BuildContext context) {
     return CustomInputField(
       labelText: 'Password',
+      controller: pcontroller,
       isObscure: true,
       validator: (value) {
         if (value!.isEmpty) {

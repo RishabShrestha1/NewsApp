@@ -2,5 +2,5 @@ class CreateUserReq {
   final String email;
   final String password;
 
-  CreateUserReq(this.email, this.password);
+  CreateUserReq({required this.email, required this.password});
 }
