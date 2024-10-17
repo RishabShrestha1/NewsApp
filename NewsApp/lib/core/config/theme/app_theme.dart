@@ -44,6 +44,17 @@ class AppTheme {
         color: AppColors.grayscaleBodyText,
       ),
     ),
+    snackBarTheme: const SnackBarThemeData(
+      backgroundColor: AppColors.lightmodeBackground,
+      contentTextStyle: TextStyle(
+        color: AppColors.black,
+      ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(8.0),
+        ),
+      ),
+    ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primaryDefault,
@@ -94,6 +105,17 @@ class AppTheme {
         fontSize: fontSize14,
         fontWeight: FontWeight.w400,
         color: AppColors.darkmodeBody,
+      ),
+    ),
+    snackBarTheme: const SnackBarThemeData(
+      backgroundColor: AppColors.darkmodeBackground,
+      contentTextStyle: TextStyle(
+        color: AppColors.grayscaleWhite,
+      ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(8.0),
+        ),
       ),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(

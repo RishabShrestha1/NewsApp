@@ -4,7 +4,7 @@ import 'package:newsapp_self/presentation/auth/pages/otp_verification.dart';
 import 'package:newsapp_self/presentation/auth/pages/reset_password.dart';
 import 'package:newsapp_self/presentation/auth/pages/signin.dart';
 import 'package:newsapp_self/presentation/auth/pages/signup.dart';
-import 'package:newsapp_self/presentation/auth/pages/welcomepage.dart';
+import 'package:newsapp_self/presentation/welcome/pages/welcomepage.dart';
 import 'package:newsapp_self/presentation/choose_mode/pages/choose_mode.dart';
 import 'package:newsapp_self/presentation/onboarding/pages/onboarding.dart';
 import 'package:newsapp_self/presentation/root/pages/root.dart';

@@ -105,15 +105,18 @@ class SignupPage extends StatelessWidget {
               password: passwordController.text.toString(),
             ),
           );
-          result.fold((l) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text(l.message),
-              ),
-            );
-          }, (r) {
-            context.go('/welcomepage');
-          });
+          result.fold(
+            (l) {
+              var snackBar = SnackBar(
+                content: Text(l),
+                behavior: SnackBarBehavior.floating,
+              );
+              ScaffoldMessenger.of(context).showSnackBar(snackBar);
+            },
+            (r) {
+              context.go('/welcomepage');
+            },
+          );
         },
         title: 'Signup',
         width: deviceWidth - 48.w,

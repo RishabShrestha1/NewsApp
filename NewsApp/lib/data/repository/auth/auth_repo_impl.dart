@@ -7,8 +7,8 @@ import 'package:newsapp_self/service_locator.dart';
 
 class AuthRepositoryImp extends AuthRepository {
   @override
-  Future<Either> signIn(SigninUserReq signinReq) async {
-    return await sl<AuthFirebaseService>().signIn(signinReq);
+  Future<Either> signIn(SigninUserReq signinUserReq) async {
+    return await sl<AuthFirebaseService>().signIn(signinUserReq);
   }
 
   @override

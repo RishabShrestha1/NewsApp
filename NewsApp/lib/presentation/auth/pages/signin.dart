@@ -95,12 +95,17 @@ class SigninPage extends StatelessWidget {
             password: passwordcontroller.text.toString(),
           ),
         );
+
         result.fold((l) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(l.message),
-            ),
+          var snackBar = SnackBar(
+            content: Text(l,
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      color: AppColors.black,
+                    )),
+            behavior: SnackBarBehavior.floating,
+            margin: const EdgeInsets.all(16),
           );
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
         }, (r) {
           context.go('/welcomepage');
         });

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:newsapp_self/data/models/auth/create_user_req.dart';
@@ -13,22 +11,20 @@ abstract class AuthFirebaseService {
 
 class AuthFirebaseServiceImpl implements AuthFirebaseService {
   @override
-  Future<Either> signIn(SigninUserReq signInReq) async {
+  Future<Either> signIn(SigninUserReq signInUserReq) async {
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: signInReq.email,
-        password: signInReq.password,
+        email: signInUserReq.email,
+        password: signInUserReq.password,
       );
       return const Right('Sign up successful');
     } on FirebaseAuthException catch (e) {
       String message = '';
-      if (e.code == 'user-not-found') {
-        message = 'No user found for that email.';
-      } else if (e.code == 'wrong-password') {
-        message = 'Wrong password provided for that user.';
-      } else if (e.code == 'invalid-email') {
-        message = 'The email address is badly formatted.';
-      } else if (e.code == 'user-disabled') {}
+      if (e.code == 'invalid-email') {
+        message = 'Not user found for that email';
+      } else if (e.code == 'invalid-credential') {
+        message = 'Wrong password provided for that user';
+      }
 
       return Left(message);
     }
