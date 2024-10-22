@@ -11,6 +11,7 @@ import 'package:newsapp_self/core/constants/routes.dart';
 import 'package:newsapp_self/core/constants/screen_dimensions.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:newsapp_self/firebase_options.dart';
+import 'package:newsapp_self/presentation/auth/Bloc/auth_bloc.dart';
 import 'package:newsapp_self/presentation/choose_mode/bloc/theme_cubit.dart';
 import 'package:newsapp_self/service_locator.dart';
 import 'package:path_provider/path_provider.dart';
@@ -47,6 +48,9 @@ class NewsApp extends StatelessWidget {
           providers: [
             BlocProvider(
               create: (context) => ThemeCubit(),
+            ),
+            BlocProvider(
+              create: (context) => AuthBloc(),
             ),
           ],
           child: BlocBuilder<ThemeCubit, ThemeMode>(

@@ -11,10 +11,10 @@ import 'package:newsapp_self/presentation/root/pages/root.dart';
 import 'package:newsapp_self/presentation/splash/pages/splash.dart';
 
 final approutes = GoRouter(
-  initialLocation: '/splashscreen',
+  // initialLocation: '/splashscreen',
   // initialLocation: '/onboarding',
   // initialLocation: '/choose_mode',
-  // initialLocation: '/signin',
+  initialLocation: '/signin',
   // initialLocation: '/signup',
   // initialLocation: '/forgotpassword',
   // initialLocation: '/otpverification',
@@ -49,7 +49,7 @@ final approutes = GoRouter(
     GoRoute(
       path: '/forgotpassword',
       name: 'forgotpassword',
-      builder: (context, state) => const ForgotpasswordPage(),
+      builder: (context, state) => ForgotpasswordPage(),
     ),
     GoRoute(
       path: '/otpverification',
