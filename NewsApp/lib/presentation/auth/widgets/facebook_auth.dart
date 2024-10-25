@@ -6,12 +6,13 @@ import 'package:newsapp_self/core/config/theme/app_colors.dart';
 import 'package:newsapp_self/core/constants/screen_dimensions.dart';
 
 class FacebookButton extends StatelessWidget {
-  const FacebookButton({super.key});
+  final VoidCallback? onPressed;
+  const FacebookButton({super.key, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     return BasicAppElevatedButton(
-      onPressed: () {},
+      onPressed: onPressed ?? () {},
       title: 'Facebook',
       icon: AppVectors.facebooklogo,
       width: deviceWidth / 2 - 40.w,

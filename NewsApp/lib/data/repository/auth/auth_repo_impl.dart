@@ -30,6 +30,11 @@ class AuthRepositoryImp extends AuthRepository {
   }
 
   @override
+  Future<Either> facebookSignin() async {
+    return await sl<AuthFirebaseService>().facebookSignIn();
+  }
+
+  @override
   Future<void> signOut() {
     // TODO: implement signOut
     throw UnimplementedError();

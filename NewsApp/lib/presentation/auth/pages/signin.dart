@@ -67,7 +67,7 @@ class SigninPage extends StatelessWidget {
                       const SizedBox(height: 16),
                       _orcontinuewith(context),
                       const SizedBox(height: 16),
-                      _alternativeLogin(),
+                      _alternativeLogin(context),
                       const SizedBox(height: 16),
                       _donthaveanaccount(context),
                     ],
@@ -126,13 +126,21 @@ class SigninPage extends StatelessWidget {
     );
   }
 
-  Widget _alternativeLogin() {
-    return const Row(
+  Widget _alternativeLogin(BuildContext context) {
+    return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        FacebookButton(),
+        FacebookButton(
+          onPressed: () {
+            context.read<AuthBloc>().add(FacebookSignInEvent());
+          },
+        ),
         Spacer(),
-        GoogleAuthButton(),
+        GoogleAuthButton(
+          onPressed: () {
+            context.read<AuthBloc>().add(GoogleSignInEvent());
+          },
+        ),
       ],
     );
   }
@@ -141,15 +149,15 @@ class SigninPage extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Checkbox(
-          value: true,
-          onChanged: (value) {},
-          fillColor: WidgetStateProperty.all(AppColors.primaryDefault),
-        ),
-        Text(
-          'Remember me',
-          style: Theme.of(context).textTheme.bodySmall,
-        ),
+        // Checkbox(
+        //   value: true,
+        //   onChanged: (value) {},
+        //   fillColor: WidgetStateProperty.all(AppColors.primaryDefault),
+        // ),
+        // Text(
+        //   'Remember me',
+        //   style: Theme.of(context).textTheme.bodySmall,
+        // ),
         const Spacer(),
         GestureDetector(
           onTap: () {

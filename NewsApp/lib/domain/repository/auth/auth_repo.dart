@@ -8,5 +8,6 @@ abstract class AuthRepository {
   Future<Either> signUp(CreateUserReq createUserReq);
   Future<Either> forgotPassword(ForgotUserPasswordReq forgotUserPasswordReq);
   Future<Either> googleSignin();
+  Future<Either> facebookSignin();
   Future<void> signOut();
 }

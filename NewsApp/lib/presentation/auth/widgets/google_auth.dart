@@ -6,12 +6,13 @@ import 'package:newsapp_self/core/config/theme/app_colors.dart';
 import 'package:newsapp_self/core/constants/screen_dimensions.dart';
 
 class GoogleAuthButton extends StatelessWidget {
-  const GoogleAuthButton({super.key});
+  final VoidCallback? onPressed;
+  const GoogleAuthButton({super.key, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     return BasicAppElevatedButton(
-      onPressed: () {},
+      onPressed: onPressed ?? () {},
       title: 'Google',
       width: deviceWidth / 2 - 40.w,
       icon: AppVectors.googlelogo,
