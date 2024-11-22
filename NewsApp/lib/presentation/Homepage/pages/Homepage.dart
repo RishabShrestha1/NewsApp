@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:newsapp_self/core/config/assets/app_vectors.dart';
-import 'package:newsapp_self/core/config/theme/app_colors.dart';
 import 'package:newsapp_self/core/constants/screen_dimensions.dart';
 import 'package:newsapp_self/presentation/Homepage/bloc/home_bloc.dart';
 import 'package:newsapp_self/presentation/Homepage/bloc/home_event.dart';
@@ -52,15 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
               width: 32.sp,
               margin: const EdgeInsets.symmetric(horizontal: 7, vertical: 5),
               decoration: BoxDecoration(
-                color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey[300]!,
-                    blurRadius: 5,
-                    offset: const Offset(0, 1),
-                  ),
-                ],
               ),
               child: IconButton(
                 onPressed: () {},
@@ -68,6 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   'assets/icons/notification.svg',
                   height: 20,
                   width: 18.sh,
+                  color: Theme.of(context).iconTheme.color,
                 ),
               ),
             ),
@@ -95,7 +87,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     'See all',
                     style: TextStyle(
                       fontSize: deviceHeight * 0.02,
-                      color: AppColors.graybodytext,
                     ),
                   ),
                 ],

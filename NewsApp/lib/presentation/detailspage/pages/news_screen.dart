@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newsapp_self/common/widgets/elements/text_widget.dart';
-import 'package:newsapp_self/core/config/theme/app_colors.dart';
 import 'package:newsapp_self/core/constants/font_size.dart';
 import 'package:newsapp_self/presentation/Homepage/widgets/category_label.dart';
 import 'package:newsapp_self/presentation/detailspage/widgets/image_banner.dart';
@@ -83,11 +82,10 @@ class DetailsScreen extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                   ),
                   SizedBox(height: 4.sp),
-                  CustomTextWidget.selectedcolour(
+                  CustomTextWidget(
                     text: title,
                     fontsize: fontSize24,
                     fontweight: FontWeight.w500,
-                    selectedcolour: AppColors.blacktext,
                   ),
                   SizedBox(height: 16.sp),
                   CustomTextWidget(

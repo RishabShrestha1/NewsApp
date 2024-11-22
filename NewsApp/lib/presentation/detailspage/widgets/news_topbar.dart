@@ -22,11 +22,10 @@ class NewsDetailsTopBar extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CustomTextWidget.selectedcolour(
+                CustomTextWidget(
                   text: source,
                   fontsize: fontSize16,
                   fontweight: FontWeight.w600,
-                  selectedcolour: AppColors.blacktext,
                 ),
                 CustomTextWidget(
                   text: '$time ago',

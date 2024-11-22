@@ -8,6 +8,9 @@ class AppTheme {
     brightness: Brightness.light,
     primaryColor: AppColors.primaryDefault,
     scaffoldBackgroundColor: AppColors.lightmodeBackground,
+    appBarTheme: const AppBarTheme(
+      backgroundColor: AppColors.lightmodeBackground,
+    ),
     bottomSheetTheme: const BottomSheetThemeData(
       backgroundColor: AppColors.lightmodeBackground,
     ),
@@ -74,6 +77,9 @@ class AppTheme {
     brightness: Brightness.dark,
     primaryColor: AppColors.primaryDefault,
     scaffoldBackgroundColor: AppColors.darkmodeBackground,
+    appBarTheme: const AppBarTheme(
+      backgroundColor: AppColors.darkmodeBackground,
+    ),
     fontFamily: 'Poppins',
     textTheme: TextTheme(
       displayLarge: TextStyle(
