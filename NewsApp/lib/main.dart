@@ -82,11 +82,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:newsapp_self/core/config/theme/app_theme.dart';
 import 'package:newsapp_self/core/constants/routes.dart';
 import 'package:newsapp_self/core/constants/screen_dimensions.dart';
-import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:newsapp_self/firebase_options.dart';
+import 'package:newsapp_self/presentation/Homepage/bloc/home_bloc.dart';
 import 'package:newsapp_self/presentation/auth/Bloc/auth_bloc.dart';
 import 'package:newsapp_self/presentation/choose_mode/bloc/theme_cubit.dart';
 import 'package:newsapp_self/service_locator.dart';
@@ -144,6 +145,9 @@ class NewsApp extends StatelessWidget {
             ),
             BlocProvider(
               create: (context) => AuthBloc(),
+            ),
+            BlocProvider(
+              create: (context) => NewsBloc(),
             ),
           ],
           child: BlocBuilder<ThemeCubit, ThemeMode>(

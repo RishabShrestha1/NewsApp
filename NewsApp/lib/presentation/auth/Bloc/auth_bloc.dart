@@ -45,7 +45,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   Future<void> _onfacebooksignin(FacebookSignInEvent event, emit) async {
-    // emit(AuthLoading());
+    emit(AuthLoading());
     final result = await facebookSigninUsecase.call();
     result.fold(
       (failure) => emit(AuthFailure(error: failure)),

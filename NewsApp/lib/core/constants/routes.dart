@@ -1,20 +1,21 @@
 import 'package:go_router/go_router.dart';
+import 'package:newsapp_self/presentation/Homepage/pages/Homepage.dart';
 import 'package:newsapp_self/presentation/auth/pages/forgot_password.dart';
 import 'package:newsapp_self/presentation/auth/pages/otp_verification.dart';
 import 'package:newsapp_self/presentation/auth/pages/reset_password.dart';
 import 'package:newsapp_self/presentation/auth/pages/signin.dart';
 import 'package:newsapp_self/presentation/auth/pages/signup.dart';
-import 'package:newsapp_self/presentation/welcome/pages/welcomepage.dart';
 import 'package:newsapp_self/presentation/choose_mode/pages/choose_mode.dart';
+import 'package:newsapp_self/presentation/detailspage/pages/news_screen.dart';
 import 'package:newsapp_self/presentation/onboarding/pages/onboarding.dart';
-import 'package:newsapp_self/presentation/root/pages/root.dart';
 import 'package:newsapp_self/presentation/splash/pages/splash.dart';
+import 'package:newsapp_self/presentation/welcome/pages/welcomepage.dart';
 
 final approutes = GoRouter(
-  // initialLocation: '/splashscreen',
+  initialLocation: '/splashscreen',
   // initialLocation: '/onboarding',
   // initialLocation: '/choose_mode',
-  initialLocation: '/signin',
+  // initialLocation: '/signin',
   // initialLocation: '/signup',
   // initialLocation: '/forgotpassword',
   // initialLocation: '/otpverification',
@@ -66,9 +67,24 @@ final approutes = GoRouter(
       builder: (context, state) => const Welcomepage(),
     ),
     GoRoute(
-      path: '/root',
-      name: 'root',
-      builder: (context, state) => const RootPage(),
-    )
+      path: '/homepage',
+      name: 'homepage',
+      builder: (context, state) => const HomeScreen(),
+    ),
+    GoRoute(
+      path: '/details',
+      name: 'details',
+      builder: (context, state) {
+        final extra = state.extra as Map<String, dynamic>;
+        return DetailsScreen(
+          title: extra['title'],
+          source: extra['source'],
+          time: extra['time'],
+          imageUrl: extra['imageUrl'],
+          content: extra['content'],
+          description: extra['description'],
+        );
+      },
+    ),
   ],
 );

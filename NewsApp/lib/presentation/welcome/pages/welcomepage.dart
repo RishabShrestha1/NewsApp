@@ -14,13 +14,13 @@ class Welcomepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(24.0),
+        padding: const EdgeInsets.all(24.0),
         child: Column(
           children: [
-            Spacer(),
+            const Spacer(),
             //Welcome Widgets
             Padding(
-              padding: EdgeInsets.all(76.0),
+              padding: const EdgeInsets.all(76.0),
               child: SvgPicture.asset(
                 AppVectors.logo,
               ),
@@ -43,7 +43,7 @@ class Welcomepage extends StatelessWidget {
             const Spacer(),
             BasicAppElevatedButton(
               onPressed: () {
-                context.go('/root');
+                context.go('/homepage');
               },
               title: "Go To Homepage",
               width: deviceWidth - 48.w,
