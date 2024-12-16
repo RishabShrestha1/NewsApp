@@ -12,7 +12,7 @@ import 'package:newsapp_self/presentation/splash/pages/splash.dart';
 import 'package:newsapp_self/presentation/welcome/pages/welcomepage.dart';
 
 final approutes = GoRouter(
-  initialLocation: '/splashscreen',
+  // initialLocation: '/splashscreen',
   // initialLocation: '/onboarding',
   // initialLocation: '/choose_mode',
   // initialLocation: '/signin',
@@ -20,7 +20,7 @@ final approutes = GoRouter(
   // initialLocation: '/forgotpassword',
   // initialLocation: '/otpverification',
   // initialLocation: '/resetpassword',
-  // initialLocation: '/welcomepage',
+  initialLocation: '/welcomepage',
   routes: [
     GoRoute(
       path: '/splashscreen',
